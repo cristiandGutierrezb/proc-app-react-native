@@ -1,15 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { Link } from 'expo-router';
+import { StyleSheet, View } from 'react-native';
+
+import Main from './components/Main';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <Link style={styles.button} href='login'>
-        <Text>Go to login</Text>
-      </Link>
       <StatusBar style="auto" />
+      <Main />
     </View>
   );
 }
@@ -19,7 +17,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
   button: {
     padding: 20,
