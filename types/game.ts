@@ -6,3 +6,10 @@ export type Game = {
   title: string,
   image: string
 }
+
+export type GameDetail = {
+  img: string,
+  title: string,
+  slug: string,
+  description: string,
+}

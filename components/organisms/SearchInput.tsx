@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { View, Text, StyleSheet, TextInput } from 'react-native'
-
-import ConfigIcon from '../atoms/ConfigIcon';
+import { View, StyleSheet, TextInput } from 'react-native'
+import { Link } from 'expo-router';
+import { LoginIcon } from '../atoms/icons';
 
 export default function SearchInput() {
 
@@ -9,7 +9,12 @@ export default function SearchInput() {
 
   return (
     <View style={styles.header}>
-      <ConfigIcon />
+      <Link href='/login'>
+        <LoginIcon
+          size={24}
+          color='white' 
+        />
+      </Link>
       <TextInput
         style={styles.input}
         onChangeText={setText}

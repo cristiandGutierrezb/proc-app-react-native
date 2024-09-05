@@ -1,3 +1,5 @@
+import { Game } from "../types/game"
+
 export async function getInfoGames() {
   const LATEST_GAMES = "https://internal-prod.apigee.fandom.net/v1/xapi/finder/metacritic/web?sortBy=-metaScore&productType=games&page=1&releaseYearMin=1958&releaseYearMax=2024&offset=0&limit=24&apiKey=1MOZgmNFxvmljaQR1X9KAij9Mo4xAY3u"
 
@@ -24,4 +26,36 @@ export async function getInfoGames() {
 
   })
 
+}
+
+export async function getGameDetails(slug: Game['slug']) {
+  const GAME_DETAILS = `https://internal-prod.apigee.fandom.net/v1/xapi/composer/metacritic/pages/games/${slug}/web?&apiKey=1MOZgmNFxvmljaQR1X9KAij9Mo4xAY3u`;
+
+  const rawData = await fetch(GAME_DETAILS);
+  const json = await rawData.json();
+
+  const { components } = json;
+  const { title, description, criticScoreSummary, images } = components[0];
+  // const { score } = criticScoreSummary;
+
+  // get the card image
+  // const cardImage = images.find((image: any) => image.typeName === "cardImage");
+  // const { bucketType, bucketPath } = cardImage;
+  const img = ``;
+  // const img = `https://www.metacritic.com/a/img/${bucketType}${bucketPath}`;
+
+  // const rawReviews = components[3].data.items;
+
+  // get the reviews
+  // const reviews = rawReviews.map((review: any) => {
+  //   const { quote, date, publicationName, author } = review;
+  //   return { quote, date, publicationName, author };
+  // });
+
+  return {
+    img,
+    title,
+    slug,
+    description
+  };
 }
