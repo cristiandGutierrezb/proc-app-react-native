@@ -8,7 +8,7 @@ export default function Main() {
   return (
     <View>
       <SearchInput />
-      <View style={styles.content}>
+      <View className="h-fit flex flex-col justify-between">
         <HomeCard
           text="Peliculas"
           href="/listItems"
@@ -28,12 +28,3 @@ export default function Main() {
     </View>
   )
 }
-
-const styles = StyleSheet.create({
-  content: {
-    flexDirection: 'column',
-    justifyContent: 'space-evenly',
-    alignContent: 'center',
-    height: '90%'
-  },
-});
