@@ -18,7 +18,7 @@ export default function HomeCard({ text, href, color }: HomeCardProps) {
 
   return (
     <View className={`${classColor} w-[90%] h-20 flex justify-center items-center mx-auto rounded-full my-8`}>
-      <Link href={href} className={`text-black ${Tokens.sizeBig}`}>
+      <Link href={href} className={`text-black ${Tokens.sizeBigText}`}>
         { text }
       </Link>
     </View>

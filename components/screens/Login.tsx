@@ -1,6 +1,9 @@
-import { View, Text, TextInput, StyleSheet } from "react-native"
-import { UserIcon } from "../atoms/icons"
 import { useState } from "react"
+import { View, Text, TextInput, StyleSheet } from "react-native"
+
+import { UserIcon, Footer } from "../"
+
+import * as Tokens from '../tokens'
 
 export default function Login() {
 
@@ -8,43 +11,23 @@ export default function Login() {
   const [pass, setPass] = useState('')
 
   return (
-    <View>
-      <UserIcon size={80} color="black" />
-      <View>
-        <Text style={styles.text}>User</Text>
+    <View className="h-full flex justify-between">
+      <View className={`flex justify-center items-center mt-20 w-36 h-36 rounded-full mx-auto bg-slate-200 ${Tokens.shadowStandard}`}>
+        <UserIcon size={Tokens.bigSizeIcon} color="black" />
+      </View>
+      <View className="h-[50%]">
+        <Text className="w-[80%] mx-auto text-3xl font-semibold">User</Text>
         <TextInput 
-          style={styles.input}
+          className={`${Tokens.standardInput}`}
           onChangeText={setUser}
         />
-        <Text style={styles.text}>Password</Text>
-        <TextInput 
-          style={styles.input}
+        <Text className="w-[80%] mx-auto text-3xl mt-5 font-semibold">Password</Text>
+        <TextInput
+          className={`${Tokens.standardInput}`}
           onChangeText={setPass}
         />
       </View>
+      <Footer />
     </View>
   )
 }
-
-const styles = StyleSheet.create({
-  content: {
-    backgroundColor: 'black'
-  },
-  form: {
-
-  },
-  text: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    paddingLeft: 20
-  },
-  input: {
-    height: 40,
-    margin: 12,
-    borderWidth: 1,
-    padding: 10,
-    width: '70%',
-    borderRadius: 50,
-    backgroundColor: 'white'
-  },
-});
