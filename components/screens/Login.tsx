@@ -4,6 +4,7 @@ import { View, Text, TextInput, StyleSheet } from "react-native"
 import { UserIcon, Footer } from "../"
 
 import * as Tokens from '../tokens'
+import { Stack } from "expo-router"
 
 export default function Login() {
 
@@ -12,6 +13,15 @@ export default function Login() {
 
   return (
     <View className="h-full flex justify-between">
+      <Stack.Screen 
+        options={{
+          headerStyle: { backgroundColor: 'black' },
+          headerTintColor: 'white',
+          headerLeft: () => <></>,
+          headerTitle: 'This is my login',
+          headerRight: () => <></>
+        }}
+      />
       <View className={`flex justify-center items-center mt-20 w-36 h-36 rounded-full mx-auto bg-slate-200 ${Tokens.shadowStandard}`}>
         <UserIcon size={Tokens.bigSizeIcon} color="black" />
       </View>
