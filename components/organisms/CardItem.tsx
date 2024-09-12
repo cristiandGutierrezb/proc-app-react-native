@@ -7,12 +7,12 @@ type CardItemProps = {
   game: Game
 }
 
-export default function CardItem({ game }: CardItemProps) {
+export function CardItem({ game }: CardItemProps) {
   return (
     <Link style={styles.content} href={`/card/${game.slug}`}>
       <View>
         <Image style={ styles.image } source={{ uri: game.image }}/>
-        {/* <Text style={styles.score}>{game.score}</Text> */}
+        <Text style={styles.score}>{game.score}</Text>
         <Text style={styles.description}>{game.description.slice(0, 50)}...</Text>
       </View>
     </Link>

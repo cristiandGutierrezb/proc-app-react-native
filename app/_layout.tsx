@@ -8,7 +8,7 @@ export default function Layout() {
 
   return (
     <SafeAreaProvider style={{ paddingBottom: insets.bottom, paddingTop: insets.top }}>
-      <View>
+      <View className='bg-slate-300 h-full'>
         <Slot />
       </View>
     </SafeAreaProvider>

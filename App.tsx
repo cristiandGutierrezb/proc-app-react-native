@@ -7,7 +7,7 @@ export default function App() {
   return (
     <View>
       <Main />
-      <StatusBar style="light" />
+      <StatusBar style="dark" />
     </View>
   );
 }

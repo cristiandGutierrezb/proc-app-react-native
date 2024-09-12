@@ -8,37 +8,17 @@ type HomeCardProps = {
 }
 
 export default function HomeCard({ text, href, color }: HomeCardProps) {
+
+  let classColor = ''
+  color === 'blue' && (classColor = 'bg-blue-500')
+  color === 'green' && (classColor = 'bg-green-500')
+  color === 'red' && (classColor = 'bg-red-500')
+
   return (
-    <View style={[styles.button, styles[color]]}>
-      <Link href={href} style={styles.link}>
+    <View className={`${classColor} w-[90%] h-20 flex justify-center items-center mx-auto rounded-full my-8`}>
+      <Link href={href} className="text-black text-4xl font-bold">
         { text }
       </Link>
     </View>
   )
 }
-
-const styles = StyleSheet.create({
-  button: {
-    width: '80%',
-    height: 100,
-    borderRadius: 10,
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginHorizontal: 'auto'
-  },
-  link: {
-    fontSize: 40,
-    fontWeight: 'bold',
-    color: 'white'
-  },
-  red: {
-    backgroundColor: 'red'
-  },
-  green: {
-    backgroundColor: 'green'
-  },
-  blue: {
-    backgroundColor: 'blue'
-  }
-})

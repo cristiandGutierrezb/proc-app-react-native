@@ -1,14 +1,14 @@
-import { View, StyleSheet, Text } from "react-native"
+import { View } from "react-native"
 
 import HomeCard from "../molecules/HomeCard";
-import SearchInput from "../organisms/SearchInput";
+import { SearchInput, Footer } from '../organisms'
 
 export default function Main() {
 
   return (
-    <View>
+    <View className="h-full flex flex-col justify-between">
       <SearchInput />
-      <View className="h-fit flex flex-col justify-between">
+      <View className="flex flex-col justify-between">
         <HomeCard
           text="Peliculas"
           href="/listItems"
@@ -25,6 +25,7 @@ export default function Main() {
           color="blue"
         />
       </View>
+      <Footer />
     </View>
   )
 }
