@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { View, FlatList, ActivityIndicator, StyleSheet } from 'react-native'
 
-import { CardItem, SearchInput } from '../organisms/'
+import { CardItem, SearchInput } from '../'
 
 import { getInfoGames } from '../../lib/metacritic'
 import { Game } from '../../types/game'

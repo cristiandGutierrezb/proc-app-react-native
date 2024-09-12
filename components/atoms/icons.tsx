@@ -13,3 +13,7 @@ export const UserIcon = ({ size, color }: IconsProps) => (
   <AntDesign name="user" size={size} color={color} />
 )
 
+export const HomeIcon = ({ size, color }: IconsProps) => (
+  <AntDesign name="home" size={size} color={color} />
+)
+

@@ -1,7 +1,7 @@
 import { View } from "react-native"
 
 import HomeCard from "../molecules/HomeCard";
-import { SearchInput, Footer } from '../organisms'
+import { SearchInput, Footer } from '../'
 
 export default function Main() {
 
