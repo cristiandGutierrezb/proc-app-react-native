@@ -1,30 +1,23 @@
-import { useEffect, useState } from 'react'
-import { View, FlatList, ActivityIndicator, StyleSheet } from 'react-native'
+import { View, FlatList, ActivityIndicator } from 'react-native'
 
 import { CardItem, SearchInput } from '../'
 
-import { getInfoGames } from '../../lib/metacritic'
-import { Game } from '../../types/game'
+import { Item } from '../../types/general_api'
 
-export default function ListElement() {
+type ListElementProps = {
+  items: Item[] 
+}
 
-  const [games, setGames] = useState<Game[]>([])
-
-  useEffect(() => {
-    getInfoGames()
-    .then((data: Game[]) => {
-      setGames(data)
-    })
-  }, [])
+export default function ListElement({ items }: ListElementProps) {
 
   return (
     <View style={{ height: '100%', backgroundColor: 'black' }}>
       <SearchInput />
-      {games.length ? (
+      {items.length ? (
         <FlatList
-          data={games}
-          keyExtractor={game => game.slug}
-          renderItem={({ item }) => <CardItem game={item} />}
+          data={items}
+          keyExtractor={item => item.slug}
+          renderItem={({ item }) => <CardItem item={item} />}
         />
       ): (
         <View style={{ flex: 1, justifyContent: 'center' }}>
@@ -34,11 +27,3 @@ export default function ListElement() {
     </View>
   )
 }
-
-const styles = StyleSheet.create({
-  image: {
-    borderRadius: 10,
-    width: 107,
-    height: 147
-  }
-})

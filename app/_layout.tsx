@@ -11,11 +11,7 @@ export default function Layout() {
       <View className='bg-slate-300 h-full'>
         <Stack 
           screenOptions={{
-            headerStyle: { backgroundColor: '#CDCDCD' },
-            headerTintColor: 'blue',
-            headerTitle: 'My title',
-            headerLeft: () => <Text>Left</Text>,
-            headerRight: () => <Text>Right</Text>
+            headerShown: false
           }}
         />
       </View>

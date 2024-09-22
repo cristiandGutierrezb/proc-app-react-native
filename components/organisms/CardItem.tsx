@@ -1,19 +1,19 @@
 import { Text, View, Image, StyleSheet } from "react-native"
 import { Link } from "expo-router"
 
-import { Game } from "../../types/game"
+import { Item } from "../../types/general_api"
 
 type CardItemProps = {
-  game: Game
+  item: Item
 }
 
-export function CardItem({ game }: CardItemProps) {
+export function CardItem({ item }: CardItemProps) {
   return (
-    <Link style={styles.content} href={`/card/${game.slug}`}>
+    <Link style={styles.content} href={`/card/${item.slug}`}>
       <View>
-        <Image style={ styles.image } source={{ uri: game.image }}/>
-        <Text style={styles.score}>{game.score}</Text>
-        <Text style={styles.description}>{game.description.slice(0, 50)}...</Text>
+        <Image style={ styles.image } source={{ uri: '' }}/>
+        <Text style={styles.score}>{item.score}</Text>
+        <Text style={styles.description}>{item.description?.slice(0, 50)}...</Text>
       </View>
     </Link>
   )

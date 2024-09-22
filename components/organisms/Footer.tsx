@@ -26,7 +26,6 @@ export function Footer() {
           size={standardSizeIcon}
         />
       </Link>
-
     </View>
   )
 }
