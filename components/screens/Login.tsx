@@ -17,8 +17,19 @@ export default function Login() {
         <UserIcon size={Tokens.bigSizeIcon} color="black" />
       </View>
       <View className="p-6">
-        <TextInput className={`${Tokens.inputFormStyle}`} placeholder="User" placeholderTextColor="#aaa" />
-        <TextInput className={`${Tokens.inputFormStyle}`} placeholder="Password" placeholderTextColor="#aaa" secureTextEntry={true}/>
+        <TextInput 
+          className={`${Tokens.inputFormStyle}`} 
+          placeholder="User" 
+          placeholderTextColor="#aaa"
+          onChangeText={setUser}
+        />
+        <TextInput 
+          className={`${Tokens.inputFormStyle}`} 
+          placeholder="Password" 
+          placeholderTextColor="#aaa" 
+          secureTextEntry={true}
+          onChangeText={setPass}
+        />
         <Pressable className={`${Tokens.standardButton} mt-5`}>
           <Text className="text-white">Login</Text>
         </Pressable>

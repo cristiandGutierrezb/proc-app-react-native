@@ -34,7 +34,7 @@ export default function Main() {
           <HomeCard
             key={category.id_category}
             text={category.title}
-            href="/listItems"
+            href={`/listItems/${category.id_category}`}
             category={category.slug}
           />
         ))}

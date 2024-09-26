@@ -15,3 +15,10 @@ export type Item = {
   category_id: number
   state_id: number
 }
+
+export type DtoUser = {
+  name: string
+  email: string
+  user: string
+  password: string
+}

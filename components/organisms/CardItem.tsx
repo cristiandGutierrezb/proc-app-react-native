@@ -2,6 +2,7 @@ import { Text, View, Image, StyleSheet } from "react-native"
 import { Link } from "expo-router"
 
 import { Item } from "../../types/general_api"
+import { standardCard, bgSecondaryColor } from "../tokens"
 
 type CardItemProps = {
   item: Item
@@ -9,35 +10,17 @@ type CardItemProps = {
 
 export function CardItem({ item }: CardItemProps) {
   return (
-    <Link style={styles.content} href={`/card/${item.slug}`}>
-      <View>
-        <Image style={ styles.image } source={{ uri: '' }}/>
-        <Text style={styles.score}>{item.score}</Text>
-        <Text style={styles.description}>{item.description?.slice(0, 50)}...</Text>
-      </View>
+    <Link
+      className={`${standardCard} bg-white mt-6 p-4`} 
+      href={`/card/${item.slug}`}
+    >
+      <Image
+        source={require('../../assets/favicon.png')}
+        className="h-16 w-16"
+      />
+      <Text>{item.score}</Text>
+      <Text>{item.title}</Text>
     </Link>
   )
 }
 
-const styles = StyleSheet.create({
-  content: {
-    width: '80%',
-    marginHorizontal: 'auto',
-    marginBottom: 30
-  },
-  image: {
-    borderRadius: 10,
-    width: 107,
-    height: 147,
-    marginHorizontal: 'auto'
-  },
-  score: {
-    fontSize: 20,
-    color: 'red',
-    fontWeight: 'bold'
-  },
-  description: {
-    fontSize: 15,
-    color: 'white'
-  }
-})
