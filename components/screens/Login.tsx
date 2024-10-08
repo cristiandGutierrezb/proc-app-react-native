@@ -1,15 +1,21 @@
 import { useState } from "react"
 import { View, TextInput, Pressable, Text } from "react-native"
+import { Link, useRouter } from "expo-router"
 
 import { UserIcon, Footer } from "../"
 
 import * as Tokens from '../tokens'
-import { Link, Stack } from "expo-router"
 
 export default function Login() {
 
+  const router = useRouter()
+
   const [user, setUser] = useState('')
   const [pass, setPass] = useState('')
+
+  const onPressLogin = () => {
+    router.push('/account')
+  }
 
   return (
     <View className="h-full flex justify-between">
@@ -17,20 +23,20 @@ export default function Login() {
         <UserIcon size={Tokens.bigSizeIcon} color="black" />
       </View>
       <View className="p-6">
-        <TextInput 
+        <TextInput
           className={`${Tokens.inputFormStyle}`} 
           placeholder="User" 
           placeholderTextColor="#aaa"
           onChangeText={setUser}
         />
-        <TextInput 
+        <TextInput
           className={`${Tokens.inputFormStyle}`} 
           placeholder="Password" 
           placeholderTextColor="#aaa" 
           secureTextEntry={true}
           onChangeText={setPass}
         />
-        <Pressable className={`${Tokens.standardButton} mt-5`}>
+        <Pressable onPress={onPressLogin} className={`${Tokens.standardButton} mt-5`}>
           <Text className="text-white">Login</Text>
         </Pressable>
         <View>
