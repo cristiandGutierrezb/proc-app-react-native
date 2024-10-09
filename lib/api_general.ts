@@ -1,6 +1,6 @@
 import { DtoUser } from "../types/general_api";
 
-const API = 'http://192.168.1.51:3000/api/v1';
+const API = 'http://192.168.0.198:3000/api/v1';
 
 import { Item } from "../types/general_api";
 

@@ -1,10 +1,23 @@
 import { Image, Text, Pressable, View } from "react-native"
+import Example from "../../components/atoms/Example"
+import { countStore } from "../../store/initialStore"
 
 export default function account() {
+
+  const inc = countStore((store) => store.inc)
+  const count = countStore((state) => state.count)
+
+  const onIncrement = () => {
+    inc()
+  }
+
   return (
     <View className="h-full justify-between">
       <View className='flex-row justify-between items-center p-4 bg-gray-100'>
-        <Image source={{ uri: 'https://via.placeholder.com/40' }} className='w-10 h-10 rounded-full' />
+        <Text className="rounded-full flex justify-center items-center bg-slate-950 text-white w-10 h-10 text-center my-auto font-bold text-lg">
+          { count }
+        </Text>
+        {/* <Image source={{ uri: 'https://via.placeholder.com/40' }} className='w-10 h-10 rounded-full' /> */}
         <View className='flex-row space-x-2'>
           <Text className='px-3 py-1 bg-blue-200 rounded-full text-blue-800'>Tag 1</Text>
           <Text className='px-3 py-1 bg-green-200 rounded-full text-green-800'>Tag 2</Text>
@@ -23,6 +36,14 @@ export default function account() {
         </View>
         <View className='bg-gray-200 p-4 rounded-lg'>
           <Text className='text-base'>#Tendencia3 - Novedades</Text>
+        </View>
+        <View className='bg-gray-200 p-4 rounded-lg'>
+        <Pressable
+          onPress={onIncrement}
+          className="bg-slate-500"
+        >
+          <Text className="text-black">Inc Count</Text>
+        </Pressable>
         </View>
       </View>
 
