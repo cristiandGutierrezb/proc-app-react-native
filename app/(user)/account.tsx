@@ -1,6 +1,6 @@
 import { Image, Text, Pressable, View } from "react-native"
-import Example from "../../components/atoms/Example"
 import { countStore } from "../../store/initialStore"
+import { Link } from "expo-router"
 
 export default function account() {
 
@@ -19,7 +19,9 @@ export default function account() {
         </Text>
         {/* <Image source={{ uri: 'https://via.placeholder.com/40' }} className='w-10 h-10 rounded-full' /> */}
         <View className='flex-row space-x-2'>
-          <Text className='px-3 py-1 bg-blue-200 rounded-full text-blue-800'>Tag 1</Text>
+          <Text className='px-3 py-1 bg-blue-200 rounded-full text-blue-800'>
+            <Link href='/notes'>Notas</Link>
+          </Text>
           <Text className='px-3 py-1 bg-green-200 rounded-full text-green-800'>Tag 2</Text>
           <Text className='px-3 py-1 bg-red-200 rounded-full text-red-800'>Tag 3</Text>
         </View>
